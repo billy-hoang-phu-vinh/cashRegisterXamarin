@@ -9,11 +9,6 @@ namespace W3Projects
         public App()
         {
             InitializeComponent();
-
-            /*            MainPage = new CashMain();
-            */
-            //MainPage = new listViewPage();
-
             MainPage = new NavigationPage(new navigationPage());
         }
 

@@ -95,10 +95,6 @@ namespace W3Projects
 
         void Quantity(System.Object sender, System.EventArgs e)
         {
-            Button digit = (Button)sender;
-            //double num = Double.Parse(digit.Text);
-            //display
-            //number.Text = digit.Text;
             number.Text = number.Text + ((Button)sender).Text;
         }
         void Buy(System.Object sender, System.EventArgs e)
@@ -124,20 +120,16 @@ namespace W3Projects
                 }
                 else
                 {
-                    //list_items.Insert(list_items.IndexOf(temp_item), newItem);
-                    newItem.quantity = result; //update
-                    list_items.Remove(temp_item);
-                    //list_items.Remove(temp_item);
-                    list_items.Add(newItem);
-                    mylist.ItemsSource = list_items.Reverse();
-                    // work
-                    //mylist.ItemsSource = list_items;
-                    //temp_item.quantity = 999;
-                    //list_items.Add(temp_item);
-
-                    //add to history
                     ItemHistory tempHistory = new ItemHistory(temp_item.name, temp_item.price, temp_item.quantity, DateTime.Now);
                     history.Add(tempHistory);
+
+
+                    newItem.quantity = result; //update
+                    list_items.Remove(temp_item);
+                    list_items.Add(newItem);
+                    mylist.ItemsSource = list_items.Reverse();
+
+                   
 
 
                     //reset
@@ -148,13 +140,6 @@ namespace W3Projects
 
                 }
             }
-
-
-
-
-
-
-            //(e.SelectedItem as Item).price -=   ;
         }
         public void Clear_Clicked(object sender, EventArgs e)
         {
